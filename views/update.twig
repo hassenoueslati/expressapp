@@ -1,0 +1,19 @@
+<html>
+<body>
+<form method="post" action="/contact/updatee">
+    <div class="mb-3 col-3">
+        <label for="id" class="form-label">id</label>
+        <input type="hidden" class="form-control" id="id" name="id" value="{{ data._id }}">
+    </div>
+    <div class="mb-3 col-3">
+        <label for="FullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="FullName" name="FullName" value="{{ data.FullName }}">
+    </div>
+    <div class="mb-3 col-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="number" class="form-control" id="phone" name="Phone" value="{{ data.Phone }}">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Confirmed">
+</form>
+</body>
+</html>

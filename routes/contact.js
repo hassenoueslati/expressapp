@@ -60,6 +60,28 @@ router.post('/update/:id',function (req,res,next) {
     
 })
 
+//2 methode update
+router.get('/updatee/:id', function(req, res, next) {
+    var id = req.params.id;
+
+    Contact.findById({_id:id}, (err,data)=>{
+        if(err) throw err ;
+        res.render('update.twig',{data})
+    })
+});
+router.post('/updatee',function (req,res,next) {
+    let id = req.body.id;
+
+    Contact.findById({_id:id},function (err,doc){
+        doc.FullName=req.body.FullName;
+        doc.Phone=req.body.Phone;
+        doc.save();
+    });
+    res.redirect("/contact/")
+
+})
+
+
 
 
 module.exports = router;
