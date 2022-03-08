@@ -1,9 +1,19 @@
 <html>
 <head>
-
+    <h1 style="text-align: center">List of Contact</h1>
 </head>
-<body>
-        <h1 style="text-align: center">List of Contact</h1>
+
+    <div>
+        <form method="post" action="/contact/search">
+
+            <label for="search">Search :</label>
+            <input type="search" id="search" name="search"
+                   aria-label="Search by FullName" />
+
+            <input type="submit" value="Search" />
+        </form>
+    </div>
+
 
 <table border="1">
                 <tr>
@@ -19,6 +29,8 @@
                         <td>{{ item.Phone }}</td>
                         <td><a href="/contact/delete/{{item._id}}">Delete</a></td>
                         <td><a href="/contact/updatee/{{item._id}}">Update</a></td>
+                        {#<td><a href="/contact/update/{{item._id}}">Update 1</a></td>#}
+
                 </tr>
 
         {% endfor %}
